@@ -77,4 +77,10 @@ def get_pokemon_image(message: Message):
         bot.send_message(chat_id=message.chat.id, text="Failed to retrieve Pokémon image.")
 
 
+@bot.message_handler(commands=['location'])
+def send_location(message: Message):
+    chat_id = message.chat.id
+    bot.send_location(chat_id, 69.30, 65)
+
+
 bot.polling()
